@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 // Todoの実体は<li>~</li>
-class Todo extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <li
@@ -13,12 +13,3 @@ class Todo extends React.Component {
     );
   }
 }
-
-// 制約の指定
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
-};
-
-export default Todo;

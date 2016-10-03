@@ -2,7 +2,7 @@ import React from 'react';
 import FilterLink from '../containers/FilterLink';
 
 // Footerの実体は<p>~</p>に囲まれた3種類のフィルタリングリンク
-class Footer extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <p>
@@ -24,4 +24,3 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;

@@ -4,7 +4,7 @@ import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 
 // AppはTODO追加、TODO一覧、フィルタリングメニュー（Footer）から成る
-class App extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <div>
@@ -16,4 +16,3 @@ class App extends React.Component {
   }
 }
 
-export default App;
