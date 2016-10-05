@@ -9,7 +9,7 @@ class AddTodo extends React.Component {
       <div>
         <form onSubmit={e => {
           e.preventDefault()
-          if (!input.value.trim()) {　return }
+          if (!input.value.trim()) { return }
           this.props.dispatch(addTodo(input.value))
           //↑ActionCreatorからActionを取得し、Storeに渡している
           input.value = ''

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Footer from './Footer';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 
-// AppはTODO追加、TODO一覧、フィルタリングメニュー（Footer）から成る
-export default class extends React.Component {
+export default class extends Component {
   render() {
     return (
       <div>

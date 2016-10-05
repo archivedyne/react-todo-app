@@ -15,8 +15,10 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 // StateをViewのプロパティに落としこむ
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownPorps) => {
+  console.log(state);
   return {
+    // todoのステートのみ取り出して, todosに落とし込む
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
   };
 };
