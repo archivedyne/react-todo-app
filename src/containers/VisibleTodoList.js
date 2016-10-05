@@ -16,9 +16,7 @@ const getVisibleTodos = (todos, filter) => {
 
 // StateをViewのプロパティに落としこむ
 const mapStateToProps = (state, ownPorps) => {
-  console.log(state);
   return {
-    // todoのステートのみ取り出して, todosに落とし込む
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
   };
 };
@@ -27,7 +25,6 @@ const mapStateToProps = (state, ownPorps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onTodoClick: (id) => {
-      //ActionCreatorからActionを取得し、Storeに渡す
       dispatch(toggleTodo(id))
     }
   };
