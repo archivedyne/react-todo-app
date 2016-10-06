@@ -14,9 +14,7 @@ class AddTodo extends React.Component {
           // ActionCreatorからActionを取得し、Storeに渡している
           input.value = ''
         }}>
-          <input ref={node => {
-            input = node
-          }} />
+          <input ref={node => input = node } />
           <button type="submit">
             Add Todo
           </button>

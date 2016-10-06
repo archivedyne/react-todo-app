@@ -11,7 +11,7 @@ export default class extends React.Component {
           <Todo
             key={todo.id}
             {...todo}
-            onClick={() => this.props.onTodoClick(todo.id)}
+            onClick={() => this.props.onClick(todo.id)}
           />
         )}
       </ul>

@@ -30,9 +30,7 @@ const mapStateToProps = (state, ownPorps) => {
 // ViewからStateにイベントを伝える
 const mapDispatchToProps = (dispatch) => {
   return {
-    onTodoClick: (id) => {
-      dispatch(toggleTodo(id))
-    }
+    onClick: (id) => { dispatch(toggleTodo(id)) }
   };
 };
 
