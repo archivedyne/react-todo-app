@@ -2,14 +2,20 @@ import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 import TodoList from '../components/TodoList';
 
+import {
+  SHOW_ALL,
+  SHOW_COMPLETED,
+  SHOW_ACTIVE
+} from '../constraints/filter';
+
 // フィルタリング状態によってTODOリストの絞り込みを行う
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
-    case 'SHOW_ALL':
+    case SHOW_ALL:
       return todos;
-    case 'SHOW_COMPLETED':
+    case SHOW_COMPLETED:
       return todos.filter(t => t.completed);
-    case 'SHOW_ACTIVE':
+    case SHOW_ACTIVE:
       return todos.filter(t => !t.completed);
   }
 };
