@@ -18,7 +18,7 @@ export const addTodo = (text) => {
 //TODOを完了する
 export const toggleTodo = (id) => {
   return {
-    type: 'TOGGLE_TODO',
+    type: TOGGLE_TODO,
     id
   };
 }
@@ -26,7 +26,7 @@ export const toggleTodo = (id) => {
 //TODOをフィルタリングする
 export const setVisibilityFilter = (filter) => {
   return {
-    type: 'SET_VISIBILITY_FILTER',
+    type: SET_VISIBILITY_FILTER,
     filter
   };
 }
