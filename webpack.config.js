@@ -2,8 +2,16 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
-  output: { path: path.join(__dirname, 'public'), filename: 'bundle.js' },
+  context: __dirname + "/src",
+  entry: {
+    javascript: "./main.js",
+    // html: "./index.html",
+  },
+  output: {
+    path: path.join(__dirname, 'bluild'),
+    publicPath:"public", // メモリ上にbuildするため、仮装buildルート
+    filename: 'bundle.js'
+  },
   module: {
     loaders: [
       {
@@ -11,10 +19,15 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react' ]
         }
       }
     ]
+  },
+  devServer: {
+    contentBase: "./", // devserverが読み込むドキュメントルートフォルダ
+    // inline: true,
+    port: 8080
   }
 }
 
