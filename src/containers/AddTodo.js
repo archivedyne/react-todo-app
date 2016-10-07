@@ -6,11 +6,18 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 class AddTodo extends React.Component {
 
-  // static propTypes = {}
+  static defaultProps = {}
 
-  constructor(props) {
-    super(props)
-    this.state = {textFieldValue: ''};
+  static propTypes = {
+    dispatch: React.PropTypes.func.isRequired,
+  }
+
+  state = {
+      textFieldValue: '',
+  }
+
+  constructor(props){
+    super(props);
   }
 
   render() {
@@ -25,7 +32,7 @@ class AddTodo extends React.Component {
         />
         <RaisedButton
           label="Addっしょ"
-          onClick={this.handleClick.bind(this)}
+          onClick={this._handleClick.bind(this)}
         />
       </form>
     );
@@ -35,7 +42,8 @@ class AddTodo extends React.Component {
     const ENTER = 13
     if (e.which === ENTER ) {
       e.preventDefault()
-      return this.handleClick();
+      this._handleClick();
+      return
     }
   }
 
@@ -46,7 +54,7 @@ class AddTodo extends React.Component {
     });
   }
 
-  handleClick() {
+  _handleClick() {
     if (!this.state.textFieldValue) { return }
     this.props.dispatch(addTodo(this.state.textFieldValue))
     this.setState({

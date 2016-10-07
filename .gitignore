@@ -40,3 +40,7 @@ jspm_packages
 
 # Build
 bundle.js
+
+# editorconfig
+.editorconfig
+

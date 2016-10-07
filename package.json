@@ -23,6 +23,7 @@
     "babel-loader": "6.2.5",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "6.16.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "1.16.1"
   },
