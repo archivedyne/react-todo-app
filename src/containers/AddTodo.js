@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions';
 import TextField from 'material-ui/TextField';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class AddTodo extends React.Component {
 
@@ -23,7 +23,7 @@ class AddTodo extends React.Component {
           onChange={this._handleTextFieldChange.bind(this)}
           onKeyPress={this._handleKeyPress.bind(this)}
         />
-        <FlatButton
+        <RaisedButton
           label="Addっしょ"
           onClick={this.handleClick.bind(this)}
         />
