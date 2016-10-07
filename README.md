@@ -3,7 +3,7 @@
 
 ## DevRun
 ```
-npm run dev
+npm run build:dev
 open http://localhost:8080/webpack-dev-server/public/index.html
 ```
 
