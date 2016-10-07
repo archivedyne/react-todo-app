@@ -25,7 +25,10 @@ module.exports = {
   },
   devServer: {
     contentBase: "./", // devserverが読み込むドキュメントルートフォルダ
-    // inline: true,
-    port: 8080
+    inline: true,
+    port: 8080,
+    compress: true,
+    clientLogLevel: "info",
+    stats: { colors: true }
   }
 }

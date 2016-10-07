@@ -28,5 +28,14 @@ module.exports = {
     // ),
     // new webpack.optimize.UglifyJsPlugin()  // minify
     // なぜか動かないので-pオプションをつけるほうが良いかも
-  ]
+  ],
+  resolve: {
+  //   //all these extensions will be resolved without specifying extension in the `require` function
+  //   extensions: ['', '.js'],
+  //   //files in these directory can be required without a relative path
+  //   modulesDirectories: [
+  //     'node_modules',
+  //     'bower_components'
+  //   ]
+  }
 }

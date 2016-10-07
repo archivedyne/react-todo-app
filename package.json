@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && npm run build:prod",
     "build:dev": "webpack-dev-server --progress --colors --hot --watch --config=./webpack.dev.config.js",
-    "build:prod": "webpack --progress --colors --config=./webpack.prod.config.js"
+    "build:prod": "webpack --progress --colors --config=./webpack.prod.config.js --optimize-minimize"
   },
   "repository": {
     "type": "git",
