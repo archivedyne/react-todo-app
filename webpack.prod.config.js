@@ -23,7 +23,10 @@ module.exports = {
     ]
   },
   plugin: [
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin()
+    // new webpack.ResolverPlugin(
+    //   new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    // ),
+    // new webpack.optimize.UglifyJsPlugin()  // minify
+    // なぜか動かないので-pオプションをつけるほうが良いかも
   ]
 }
