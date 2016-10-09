@@ -6,8 +6,8 @@ module.exports = {
     javascript: "./main.js",
   },
   output: {
-    path: 'public', // webpackで使用する
-    publicPath:"public", // webpack-dev-severで使用する
+    path: 'public/js', // webpackで使用する
+    publicPath:"public/js", // webpack-dev-severで使用する
     filename: 'bundle.js'
   },
   module: {
@@ -22,12 +22,17 @@ module.exports = {
       }
     ]
   },
-  plugin: [
-    // new webpack.ResolverPlugin(
-    //   new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    // ),
-    // new webpack.optimize.UglifyJsPlugin()  // minify
-    // なぜか動かないので-pオプションをつけるほうが良いかも
+  plugins: [
+    // これ付けないと、ReactのminifyでDisable warningがでるため
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    }),
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    ),
+    new webpack.optimize.UglifyJsPlugin()  // minify
   ],
   resolve: {
   //   //all these extensions will be resolved without specifying extension in the `require` function

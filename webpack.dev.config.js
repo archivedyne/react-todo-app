@@ -7,8 +7,8 @@ module.exports = {
     // html: "./index.html",
   },
   output: {
-    path: 'public', // webpackで使用する
-    publicPath:"public", // webpack-dev-severで使用する
+    path: 'public/js', // webpackで使用する
+    publicPath:"public/js", // webpack-dev-severで使用する
     filename: 'bundle.js'
   },
   module: {

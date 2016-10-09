@@ -1,0 +1,17 @@
+{
+  "name": "9ch",
+  "description": "",
+  "main": "",
+  "authors": [
+    "mgoldchild"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
