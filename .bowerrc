@@ -1,0 +1,7 @@
+{
+  "directory": "bower_components",
+  "json": "bower.json",
+  "color": true,
+  "save": true,
+  "save-exact": true
+}

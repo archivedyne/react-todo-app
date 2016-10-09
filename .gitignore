@@ -44,3 +44,5 @@ bundle.js
 # editorconfig
 .editorconfig
 
+# bower
+bower_components

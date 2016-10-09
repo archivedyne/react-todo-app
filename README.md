@@ -3,8 +3,9 @@
 
 ## DevRun
 ```
+npm install -g bower
 npm i
-npm run bower i
+bower i
 npm run build:dev
 npm open
 ```
