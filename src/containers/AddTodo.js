@@ -31,7 +31,7 @@ class AddTodo extends React.Component {
           onKeyPress={this._handleKeyPress.bind(this)}
         />
         <RaisedButton
-          label="Addっしょ"
+          label="Add"
           onClick={this._handleClick.bind(this)}
         />
       </form>

@@ -6,6 +6,7 @@
 npm install -g bower
 npm i
 bower i
+npm shrinkwrap --dev
 npm run build:dev
 npm open
 ```
