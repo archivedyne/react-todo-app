@@ -15,19 +15,12 @@ var plumber = function () {
   return gulpPlumber({ errorHandler : handleError });
 };
 
-//------------------------------------------------
-// static LESS
-//------------------------------------------------
 var cssSource = [
   "./bower_components/normalize-css/normalize.css",
   // "./bower_components/font-awesome/css/font-awesome.min.css",
-  // "./bower_components/bootstrap/dist/css/bootstrap.min.css",
-  // "./bower_components/todc-bootstrap/dist/css/todc-bootstrap.min.css"
 ];
 
 var lessSource = [
-  // "./bower_components/paper/bootswatch.less",
-  // "./bower_components/paper/variables.less"
 ];
 
 gulp.task('css', function () {

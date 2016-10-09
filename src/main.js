@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import createLogger from 'redux-logger';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -15,7 +16,18 @@ import reducers from './reducers';
 // React 15.0.2 "Unknown props onTouchTap" warningsの対策
 injectTapEventPlugin();
 
-let store = createStore(reducers);
+const DEBUG = true;
+
+let logger = createLogger();
+
+let middleware = [
+  DEBUG && logger
+].filter(Boolean)
+
+let store = createStore(
+  reducers,
+  applyMiddleware(...middleware)
+);
 
 render(
   <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
