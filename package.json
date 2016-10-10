@@ -5,8 +5,8 @@
   "main": "",
   "scripts": {
     "build": "npm run clean && npm run build:prod",
-    "build:dev": "webpack-dev-server --progress --colors --hot --watch --config=./webpack.dev.config.js",
-    "build:prod": "gulp css && webpack --progress --colors --config=./webpack.prod.config.js",
+    "dev": "webpack-dev-server --progress --colors --hot --watch --config=./webpack.dev.config.js",
+    "prod": "gulp prod && webpack --progress --colors --config=./webpack.prod.config.js",
     "open": "open http://localhost:8080/webpack-dev-server/public/index.html"
   },
   "repository": {
