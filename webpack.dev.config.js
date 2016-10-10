@@ -32,7 +32,6 @@ module.exports = {
     stats: { colors: true }
   },
   plugins: [
-    // これ付けないと、ReactのminifyでDisable warningがでるため
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("development")
