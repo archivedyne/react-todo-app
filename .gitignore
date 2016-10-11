@@ -39,11 +39,11 @@ jspm_packages
 .node_repl_history
 
 # Builded Files
-bundle.js
-style.css
+dist
 
 # editorconfig
 .editorconfig
 
 # bower
 bower_components
+

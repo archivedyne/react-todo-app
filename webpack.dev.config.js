@@ -1,14 +1,14 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  context: __dirname + "/src",
+  context: path.join(__dirname, 'src'),
   entry: {
     javascript: "./main.js",
-    // html: "./index.html",
+    html: "./index.html",
   },
   output: {
-    path: 'public/js', // webpackで使用する
-    publicPath:"/public/js", // webpack-dev-severで使用する
+    path: path.join(__dirname, 'dist'), //'public/js', // webpackで使用する
     filename: 'bundle.js'
   },
   module: {
@@ -20,17 +20,26 @@ module.exports = {
         query: {
           presets: ['latest', 'react', 'stage-0' ]
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]"
       }
     ]
   },
   devServer: {
-    contentBase: "./", // devserverが読み込むドキュメントルートフォルダ
+    // contentBase: "./", // devserverが読み込むドキュメントルートフォルダ
     // publicPath: "public/js",
     inline: true,
     port: 8080,
     compress: true,
     clientLogLevel: "info",
-    stats: { colors: true }
+    stats: { colors: true },
+    historyApiFallback: true
   },
   plugins: [
     new webpack.DefinePlugin({

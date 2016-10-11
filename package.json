@@ -4,10 +4,10 @@
   "description": "",
   "main": "",
   "scripts": {
-    "build": "npm run clean && npm run build:prod",
+    "build": "npm run clean && npm run prod",
     "dev": "webpack-dev-server --progress --colors --hot --watch --config=./webpack.dev.config.js",
-    "prod": "gulp prod && webpack --progress --colors --config=./webpack.prod.config.js",
-    "open": "open http://localhost:8080/webpack-dev-server/public/index.html"
+    "prod": "webpack --progress --colors --config=./webpack.prod.config.js",
+    "open": "open http://localhost:8080/webpack-dev-server/"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "babel-preset-latest": "6.16.0",
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "6.16.0",
+    "css-loader": "0.25.0",
+    "file-loader": "0.9.0",
     "gulp": "3.9.1",
     "gulp-concat": "2.6.0",
     "gulp-less": "3.1.0",
@@ -34,6 +36,7 @@
     "require-dir": "0.3.1",
     "run-sequence": "1.2.2",
     "streamqueue": "1.1.1",
+    "style-loader": "0.13.1",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.1"
   },

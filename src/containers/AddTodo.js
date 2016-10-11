@@ -24,7 +24,7 @@ class AddTodo extends React.Component {
     return (
       <form>
         <TextField
-          hintText="ここにタスクを入力してください"
+          hintText="ここにタスクを入力"
           ref="textField"
           value={this.state.textFieldValue}
           onChange={this._handleTextFieldChange.bind(this)}

@@ -40,7 +40,7 @@ render(
   <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
     <Provider store={store}>
       <Router history={history}>
-        <Route path="/public/index.html" component={App}>
+        <Route path="/" component={App}>
         </Route>
       </Router>
     </Provider>
