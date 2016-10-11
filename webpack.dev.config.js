@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: 'public/js', // webpackで使用する
-    publicPath:"public/js", // webpack-dev-severで使用する
+    publicPath:"/public/js", // webpack-dev-severで使用する
     filename: 'bundle.js'
   },
   module: {
@@ -25,6 +25,7 @@ module.exports = {
   },
   devServer: {
     contentBase: "./", // devserverが読み込むドキュメントルートフォルダ
+    // publicPath: "public/js",
     inline: true,
     port: 8080,
     compress: true,

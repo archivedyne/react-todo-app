@@ -28,7 +28,7 @@ const todo = (state, action) => {
 }
 
 // 複数のTODOを処理するための関数
-const todos = (state = [], action) => {
+export const todos = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -45,7 +45,7 @@ const todos = (state = [], action) => {
 }
 
 // TODOの表示状態を処理するための関数
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
+export const visibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return action.filter;
@@ -54,9 +54,9 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
   }
 }
 
-// 上記の関数をまとめて外に公開する
-const todoApp = combineReducers({
-  todos,
-  visibilityFilter
-});
-export default todoApp;
+// // 上記の関数をまとめて外に公開する
+// const todoApp = combineReducers({
+//   todos,
+//   visibilityFilter
+// });
+// export default todoApp;

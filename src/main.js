@@ -1,8 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import createLogger from 'redux-logger';
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -11,13 +13,16 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import App from './components/App';
-import reducers from './reducers';
+import * as reducers from './reducers';
 
-// React 15.0.2 "Unknown props onTouchTap" warningsの対策
 injectTapEventPlugin();
 
-const DEBUG = true;
+const combinedReducers = combineReducers({
+  ...reducers,
+  routing: routerReducer
+})
 
+const DEBUG = true;
 let logger = createLogger();
 
 let middleware = [
@@ -25,15 +30,21 @@ let middleware = [
 ].filter(Boolean)
 
 let store = createStore(
-  reducers,
+  combinedReducers,
   applyMiddleware(...middleware)
 );
+
+const history = syncHistoryWithStore(browserHistory, store)
 
 render(
   <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
     <Provider store={store}>
-      <App />
+      <Router history={history}>
+        <Route path="/public/index.html" component={App}>
+        </Route>
+      </Router>
     </Provider>
   </MuiThemeProvider>,
   document.getElementById('root')
 );
+
