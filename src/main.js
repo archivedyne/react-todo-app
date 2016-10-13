@@ -47,4 +47,3 @@ render(
   </MuiThemeProvider>,
   document.getElementById('root')
 );
-

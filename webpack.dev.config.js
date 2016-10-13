@@ -8,7 +8,7 @@ module.exports = {
     html: "./index.html",
   },
   output: {
-    path: path.join(__dirname, 'dist'), //'public/js', // webpackで使用する
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {

@@ -19,4 +19,3 @@ export default class extends Component {
   }
 }
 
-      //<div className={styles.hogeHoge}>

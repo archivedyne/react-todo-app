@@ -70,7 +70,7 @@ export default class extends React.Component {
     );
   }
 
-  // MEMO:
+  // NOTE:
   // 本当はtablerowcolumnに仕込みたいがbugで仕込めないため、
   // この形で処理をしている
   _onRowSelection(key) {

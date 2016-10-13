@@ -1,10 +1,11 @@
 {
-  "name": "9ch",
+  "name": "simple-todo-app",
   "version": "1.0.0",
   "description": "",
   "main": "",
   "scripts": {
     "build": "npm run clean && npm run prod",
+    "lint": "eslint src/**/*.js",
     "dev": "webpack-dev-server --progress --colors --hot --watch --config=./webpack.dev.config.js",
     "prod": "webpack --progress --colors --config=./webpack.prod.config.js",
     "open": "open http://localhost:8080/webpack-dev-server/"
@@ -26,6 +27,11 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "6.16.0",
     "css-loader": "0.25.0",
+    "eslint": "3.7.1",
+    "eslint-config-airbnb": "12.0.0",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.4.1",
     "file-loader": "0.9.0",
     "style-loader": "0.13.1",
     "webpack": "1.13.2",

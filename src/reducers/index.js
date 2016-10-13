@@ -54,9 +54,3 @@ export const visibilityFilter = (state = 'SHOW_ALL', action) => {
   }
 }
 
-// // 上記の関数をまとめて外に公開する
-// const todoApp = combineReducers({
-//   todos,
-//   visibilityFilter
-// });
-// export default todoApp;
