@@ -37,10 +37,10 @@ module.exports = {
         NODE_ENV: JSON.stringify("production")
       }
     }),
-    // new webpack.ResolverPlugin(
-    //   new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    // ),
-    // new webpack.optimize.UglifyJsPlugin()  // minify
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    ),
+    new webpack.optimize.UglifyJsPlugin()  // minify
   ],
   resolve: {
   //   //all these extensions will be resolved without specifying extension in the `require` function
