@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import AppBar from 'material-ui/AppBar';
+
 import Footer from './Footer';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
-import AppBar from 'material-ui/AppBar';
 
-require("../style.css");
+require('../style.css');
 
-export default class extends Component {
+export default class extends React.Component {
   render() {
     return (
       <div>

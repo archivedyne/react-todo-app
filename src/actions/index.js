@@ -1,32 +1,33 @@
 import {
   ADD_TODO,
   TOGGLE_TODO,
-  SET_VISIBILITY_FILTER
-} from "../constraints";
+  SET_VISIBILITY_FILTER,
+} from '../constraints';
 
-let nextTodoId = 0; //TODOのid管理するための変数
+// TODOのid管理するための変数
+let nextTodoId = 0;
 
-//TODOを追加する
+// TODOを追加する
 export const addTodo = (text) => {
   return {
     type: ADD_TODO,
     id: nextTodoId++,
-    text
+    text,
   };
-}
+};
 
-//TODOを完了する
+// TODOを完了する
 export const toggleTodo = (id) => {
   return {
     type: TOGGLE_TODO,
-    id
+    id,
   };
-}
+};
 
-//TODOをフィルタリングする
+// TODOをフィルタリングする
 export const setVisibilityFilter = (filter) => {
   return {
     type: SET_VISIBILITY_FILTER,
-    filter
+    filter,
   };
-}
+};

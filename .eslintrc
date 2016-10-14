@@ -1,6 +1,18 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "max-len": [1, 70, 2, {ignoreComments: true}]
+    'no-plusplus': "off",
+    "arrow-body-style": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "react/prefer-stateless-function": "off",
+    "react/jsx-filename-extension": "off",
+    "no-useless-constructor": "off",
+    "no-underscore-dangle": "off",
+    "no-string-refs": "off",
+    "react/sort-comp": "off",
+    "react/no-string-refs": "off",
+    "react/no-unused-prop-types": "off"
   }
 }

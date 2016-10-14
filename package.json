@@ -5,10 +5,10 @@
   "main": "",
   "scripts": {
     "build": "npm run clean && npm run prod",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint src/**/*.js; exit 0",
     "dev": "webpack-dev-server --progress --colors --hot --watch --config=./webpack.dev.config.js",
     "prod": "webpack --progress --colors --config=./webpack.prod.config.js",
-    "open": "open http://localhost:8080/webpack-dev-server/"
+    "open": "open http://localhost:8080/"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "homepage": "",
   "devDependencies": {
     "babel-core": "6.14.0",
+    "babel-eslint": "7.0.0",
     "babel-loader": "6.2.5",
     "babel-preset-latest": "6.16.0",
     "babel-preset-react": "6.11.1",

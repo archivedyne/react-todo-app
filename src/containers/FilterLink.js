@@ -8,7 +8,7 @@ import Link from '../components/Link';
  */
 const mapStateToProps = (state, ownProps) => {
   return {
-    active: ownProps.filter === state.visibilityFilter
+    active: ownProps.filter === state.visibilityFilter,
   };
 };
 
@@ -16,8 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.filter))
-    }
+      dispatch(setVisibilityFilter(ownProps.filter));
+    },
   };
 };
 

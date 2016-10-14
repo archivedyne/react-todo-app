@@ -5,7 +5,7 @@ import TodoList from '../components/TodoList';
 import {
   SHOW_ALL,
   SHOW_COMPLETED,
-  SHOW_ACTIVE
+  SHOW_ACTIVE,
 } from '../constraints/filter';
 
 // フィルタリング状態によってTODOリストの絞り込みを行う
@@ -17,20 +17,22 @@ const getVisibleTodos = (todos, filter) => {
       return todos.filter(t => t.completed);
     case SHOW_ACTIVE:
       return todos.filter(t => !t.completed);
+    default:
+      return todos;
   }
 };
 
 // StateをViewのプロパティに落としこむ
-const mapStateToProps = (state, ownPorps) => {
+const mapStateToProps = (state) => {
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+    todos: getVisibleTodos(state.todos, state.visibilityFilter),
   };
 };
 
 // ViewからStateにイベントを伝える
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickRow: (id) => { dispatch(toggleTodo(id)); }
+    onClickRow: (id) => { dispatch(toggleTodo(id)); },
   };
 };
 
@@ -38,6 +40,6 @@ const mapDispatchToProps = (dispatch) => {
 const VisibleTodoList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList); //ViewにはReact.jsで用意したTodoListを使用する
+)(TodoList); // ViewにはReact.jsで用意したTodoListを使用する
 
 export default VisibleTodoList;
